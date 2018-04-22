@@ -57,10 +57,10 @@ suggestions = [
     '52. CM: 0 jumps directly to the beginning of the line(hard)',
     '53. CM: ^ jumps to first non blank character',
     '54. CM: $ jumps to end of line',
-    '55. CM: fx - jump to next `x` character,
-    '56. CM: Fx jumps to previous `x` character',
-    '57. CM: tx jumps forward to right before `x` character',
-    '58. CM: Tx jumps backwards to right before `x` character',
+    '55. CM: fx - jump to next x character',
+    '56. CM: Fx jumps to previous x character',
+    '57. CM: tx jumps forward to right before x character',
+    '58. CM: Tx jumps backwards to right before x character',
 ]
 c = 0
 t = 60 # 60 sec
@@ -77,8 +77,8 @@ def do_something(sc):
     global c
     c += 1
     print ("Printed %d suggestions.." %(c))
-    
-    s.enter(t, 1, do_something, (sc,))
 
+    s.enter(t, 1, do_something, (sc,))
+os.system('notify-send "Started the script..."')
 s.enter(t, 1, do_something, (s,))
 s.run()
